@@ -72,7 +72,7 @@ namespace WeChatSample.Authorization
                 {
                     string content = await response.Content.ReadAsStringAsync();
 
-                    var payload = JsonConvert.DeserializeObject<PayLoad>(content);
+                    var payload = JsonConvert.DeserializeObject<Payload>(content);
 
                     Volatile.Write(ref _accessToken, payload.AccessToken);
                     Volatile.Write(ref _expiresOn, (DateTimeOffset.UtcNow + TimeSpan.FromSeconds(payload.ExpiresIn)).Ticks);
@@ -92,7 +92,7 @@ namespace WeChatSample.Authorization
             return (expiresOn - DateTimeOffset.UtcNow.Ticks > 0) ? accessToken : null;
         }
 
-        private class PayLoad
+        private class Payload
         {
             [JsonProperty(PropertyName = "access_token")]
             public string AccessToken { get; set; }
