@@ -23,8 +23,8 @@ namespace WeChatSample.Authorization
                 throw new ArgumentNullException(nameof(configuration));
             }
 
-            _appId = configuration["wechat: appid"];
-            _appSecret = configuration["wechat: appsecret"];
+            _appId = configuration["wechat:appid"];
+            _appSecret = configuration["wechat:appsecret"];
             _semaphore = new SemaphoreSlim(1);
         }
 
