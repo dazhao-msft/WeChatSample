@@ -6,8 +6,14 @@ using WeChatSample.Models;
 namespace WeChatSample.Controllers
 {
     [Route("api/[controller]")]
-    public class PassiveReplyController : Controller
+    public class DefaultController : Controller
     {
+        [HttpGet]
+        public string Get()
+        {
+            return Request.Query["echostr"];
+        }
+
         [HttpPost]
         public string Post()
         {
