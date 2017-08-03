@@ -60,6 +60,10 @@ namespace WeChatSample.Authorization
         {
             using (var client = new HttpClient())
             {
+                //
+                // https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183
+                //
+
                 string url = FormattableString.Invariant($"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={_appId}&secret={_appSecret}");
 
                 var response = await client.GetAsync(url);
