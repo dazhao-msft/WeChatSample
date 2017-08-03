@@ -11,6 +11,10 @@ namespace WeChatSample.Controllers
         [HttpGet]
         public string Get()
         {
+            //
+            // TODO: Validate token: http://blog.csdn.net/JaHello/article/details/52423574
+            //
+
             return Request.Query["echostr"];
         }
 
