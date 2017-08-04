@@ -24,7 +24,7 @@ namespace WeChatSample.Controllers
 
             using (var client = new HttpClient())
             {
-                string url = FormattableString.Invariant($"https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token={accessToken}");
+                string url = FormattableString.Invariant($"{Constants.WeChatUrlPrefix}getcallbackip?access_token={accessToken}");
 
                 var response = await client.GetAsync(url);
 
